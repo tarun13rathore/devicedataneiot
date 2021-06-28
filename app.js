@@ -10,6 +10,7 @@ app.use(express.static("public"));
 require("dotenv").config({path: "config.env"})
 const DB = process.env.DATABASE;
 
+const PORT = process.env.PORT || 3007;
 
 app.use(bodyParser.urlencoded({extended: false})) //Post Body Parser
 //mongoose.connect("mongodb://127.0.0.1:27017/devicedata",{useNewUrlParser: true,useUnifiedTopology: true})
@@ -88,4 +89,6 @@ app.get('/showdata',(req,res)=>{
 })
 
 
-app.listen(7060);
+app.listen(PORT,() =>{
+    console.log(`server is running port no ${PORT}`)
+})
