@@ -10,6 +10,7 @@ app.use(express.static("public"));
 require("dotenv").config({path: "config.env"})
 const DB = process.env.DATABASE;
 
+
 app.use(bodyParser.urlencoded({extended: false})) //Post Body Parser
 //mongoose.connect("mongodb://127.0.0.1:27017/devicedata",{useNewUrlParser: true,useUnifiedTopology: true})
 mongoose.connect(DB,{useNewUrlParser: true,useUnifiedTopology: true})
