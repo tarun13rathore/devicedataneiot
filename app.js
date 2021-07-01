@@ -66,16 +66,41 @@ app.get('/dashboard',(req,res)=>{
 
 //important
 
-app.post('/saveData', (req,res,next)=>{
- var deviceDeatils = new dataInfo({
-    deviceid: req.body.deviceid,
-    batteryvolt: req.body.batteryvolt,
-    solarvolt: req.body.solarvolt
- })
- //console.log(deviceDeatils);
- deviceDeatils.save()
- //res.redirect('index')
-})
+// app.post('/saveData', (req,res,next)=>{
+//  var deviceDeatils = new dataInfo({
+//     deviceid: req.body.deviceid,
+//     batteryvolt: req.body.batteryvolt,
+//     solarvolt: req.body.solarvolt
+//  })
+//  //console.log(deviceDeatils);
+//  deviceDeatils.save()
+//  //res.redirect('index')
+// })
+
+//get method
+app.get('/saveData',(req,res)=>{
+    const deviceDeatils = new dataInfo({
+       deviceid: req.query.deviceid,
+       batteryvolt: req.query.batteryvolt,
+       solarvolt: req.query.solarvolt
+    })
+    //console.log(deviceDeatils);
+    deviceDeatils.save()
+    res.status(200).send({msg: "save data success"})
+    //res.redirect('index')
+   })
+
+////
+// app.post('/saveData', (req,res,next)=>{
+//     var deviceDeatils = new dataInfo({
+//        deviceid: req.body.deviceid,
+//        batteryvolt: req.body.batteryvolt,
+//        solarvolt: req.body.solarvolt
+//     })
+//     //console.log(deviceDeatils);
+//     deviceDeatils.save()
+//     //res.redirect('index')
+//    })
 
 app.get('/showdata',(req,res)=>{
     //res.render('results')
