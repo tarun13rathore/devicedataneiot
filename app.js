@@ -86,7 +86,7 @@ app.get('/saveData',(req,res)=>{
     })
     //console.log(deviceDeatils);
     deviceDeatils.save()
-    res.status(200).send({msg: "save data success",status:"ABCDEFGH"})
+    res.status(200).send({msg: "save data success",Control_status:"ABCDEFGH"})
     //res.redirect('index')
    })
 
