@@ -22,6 +22,7 @@
                 <th>Device Id</th>
                 <th>Battery Volts</th>
                 <th>SolarVolt</th>
+                <th>Date</th>
 
             </tr>
 
@@ -38,6 +39,9 @@
                     </td>
                     <td>
                         <%=data.solarvolt %>
+                    </td>
+                    <td>
+                        <%=data.created_at %>
                     </td>
                 </tr>
                 <% i++; }) %>
