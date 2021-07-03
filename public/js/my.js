@@ -11,3 +11,6 @@ function ACV(id, min, max) {
          document.getElementById(id).style.setProperty('--dc-display-value', newGaugeDisplayValue);
          document.getElementById(id).style.setProperty('--dc-value', newGaugeValue);
      }
+
+
+
