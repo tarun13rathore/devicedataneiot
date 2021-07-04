@@ -28,7 +28,7 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <p><span>Device Id</span> </p>
+                    <p><span>Device Id : </span><%= practice.deviceid %></p>
                 </div>
                 <div class="col-sm-4">
                     <p>Server Date : <span id="date"></span></p>
@@ -124,8 +124,8 @@
                     <div class="col-md-4  mb-3">
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">AC Over Voltage</li>
-                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">AC Berrty Voltage</li>
+                                <li class="list-group-item"><%= practice.batteryvolt %></li>
                                 <li class="list-group-item">No Fault</li>
                             </ul>
                         </div>
@@ -133,8 +133,8 @@
                     <div class="col-md-4">
                         <div class="card" style="width: 18rem;">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">AC Under Voltage</li>
-                                <li class="list-group-item">A second item</li>
+                                <li class="list-group-item">AC Solar Voltage</li>
+                                <li class="list-group-item"><%= practice.solarvolt %></li>
                                 <li class="list-group-item">No Fault</li>
                             </ul>
                         </div>

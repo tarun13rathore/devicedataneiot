@@ -33,10 +33,10 @@ app.get('/',(req,res)=>{
 })
 
 
-//dashboard req 
-app.get('/dashboard',(req,res)=>{
-    res.render('dashboard')
-})
+// //dashboard req 
+// app.get('/dashboard',(req,res)=>{
+//     res.render('dashboard')
+// })
 
 
 
@@ -71,13 +71,15 @@ app.get('/showdata',(req,res)=>{
 
 
 //indiviual data show in dashboard
-app.get('/indiv',(req,res)=>{
+app.get('/dashboard',(req,res)=>{
     dataInfo.findOne({},
         (err, data1) =>{
         if(err) throw err;
-        console.log(data1);
-        res.render('data1')
-    })
+        res.render('dashboard',{
+            user : req.user,
+            practice: data1
+        })
+    }).sort({_id:-1}).limit(1);
 })
 
 
